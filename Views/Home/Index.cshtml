@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Webcam View";
+}
+
+<h2>Webcam View</h2>
+
+<video id="webcam" width="640" height="480" autoplay></video>
+<canvas id="canvas" width="640" height="480"></canvas>
+
+<script>
+    const video = document.getElementById('webcam');
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+
+    // Solicita permissão para acessar a webcam
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+            video.srcObject = stream;
+
+            // Inicia o envio de imagens a cada 5 segundos (5000 ms)
+            setInterval(() => {
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                canvas.toBlob(function (blob) {
+                    sendImage(blob); // Envia a imagem
+                }, 'image/png');
+            }, 100);
+        })
+        .catch(function (error) {
+            console.error("Erro ao acessar a webcam: ", error);
+        });
+
+    // Função para enviar a imagem ao controller
+    function sendImage(blob) {
+        const formData = new FormData();
+        formData.append('imageFile', blob, 'captured_image.png'); // O terceiro argumento é o nome do arquivo
+
+        fetch('/Home/ReceiveImage', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message); // Mostra a mensagem de retorno no console
+            })
+            .catch(error => {
+                console.error('Erro ao enviar a imagem:', error);
+            });
+    }
+</script>

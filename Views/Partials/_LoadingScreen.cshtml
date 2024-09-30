@@ -1,0 +1,17 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/loadingScreen.css" />
+</head>
+
+<div id="loading-screen">
+    <div id="loading-screen-bg"></div>
+    <div id="loading-screen-img">
+        <img src="~/img/loader.gif" />
+        <p><strong>Aguarde...</strong></p>
+    </div>
+</div>
+
+<script>
+    $(window).on('load', function () {
+        $('#loading-screen').css('display', 'none');
+    });
+</script>

@@ -1,0 +1,421 @@
+#container {
+    width: 100%;
+}
+
+#topo {
+    width: 100%;
+    height: 33px;
+    background-color: #3791D3;
+}
+
+#topoNatal {
+    width: 100%;
+    height: 33px;
+    background-color: #3791D3;
+}
+
+#conteudo {
+    padding-top: 8px;
+    width: 100%;
+    background-color: white;
+}
+
+#conteudoNatal {
+    padding-top: 8px;
+    width: 100%;
+    background-color: white;
+}
+
+#rodape {
+    width: 100%;
+    height: 20px;
+    background-color: #3791D3;
+    color: white;
+    text-align: center;
+}
+
+#nomePrograma {
+    color: white;
+    font-size: 20px;
+    padding-left: 60px;
+    /*text-align:center;*/
+    padding-top: 3px;
+    font-weight: bold;
+}
+
+.itemMenu {
+    height: 50px;
+    width: 100%;
+    padding-bottom: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #3791D3;
+    border-bottom-width: 1px;
+    padding-top: 8px;
+    padding-left: 1px;
+}
+
+.informacoesAcesso {
+    color: black;
+    position: relative;
+    vertical-align: text-bottom;
+}
+
+.tituloMenu {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    font-family: 'Segoe WP';
+}
+
+.imagensMenu {
+    top: 5px;
+    width: 40px;
+    float: left;
+    height: 40px;
+    padding-right: 10px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+#telaLogin {
+    font-weight: bold;
+    left: 5px;
+    position: relative;
+}
+
+#erro {
+    color: red;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+#AdvertenciaErro {
+    color: orangered;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+#informacao {
+    color: darkblue;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+#sucesso {
+    color: green;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+#erro p {
+    color: green;
+}
+
+.campoDesabilitado {
+    background-color: #e2e2e2;
+    font-weight: bold;
+}
+
+.botao {
+    background: #C9DCE9;
+    color: black;
+    font-weight: bold;
+    height: 30px;
+}
+
+/*.botao:focus {
+        background-color: #aaaaff;
+    }*/
+
+body {
+    -ms-user-select: none;
+    scrollbar-arrow-color: black;
+    scrollbar-3dlight-color: black;
+    scrollbar-highlight-color: black;
+    scrollbar-face-color: #35a1e7;
+    scrollbar-shadow-color: #35a1e7;
+    scrollbar-darkshadow-color: #FFFF00;
+    scrollbar-track-color: #b2e0ff;
+    scrollbar-overflow: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#btnEnvia, #btnVoltar, #btnLimpa, #btnNovo, #btnAdiciona {
+    width: 48px;
+    height: 48px;
+}
+
+#btnVoltarReduzido {
+    width: 20px;
+    height: 20px;
+}
+
+.semIcone {
+    font-family: 'Segoe WP';
+    color: #35a1e7;
+    display: inline;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.labelEsquerda {
+    width: 45%;
+    text-align: right;
+    float: left;
+    padding-bottom: 3px;
+}
+
+    .labelEsquerda label {
+        font-weight: bold;
+        position: relative;
+        right: 1px;
+        font-size: 12px;
+    }
+
+.campoDireita {
+    /*float:right;*/
+    width: 55%;
+    padding-right: 0;
+    padding-bottom: 0px;
+    white-space: nowrap;
+}
+
+.labelEsquerdaChecaEtiq {
+    width: 44%;
+    text-align: right;
+    float: left;
+    padding-bottom: 3px;
+}
+
+.campoDireitaChecaEtiq {
+    /*float:right;*/
+    width: 56%;
+    padding-right: 0;
+    padding-bottom: 0px;
+    white-space: nowrap;
+}
+
+.campoDireita input[type="text"], .campoDireita input[type="password"] {
+    width: 110px;
+}
+
+.campoInteiro {
+    padding-left: 50px;
+    padding-bottom: 3px;
+}
+
+    .campoInteiro input[type="text"], .campoInteiro input[type="password"] {
+        width: 200px;
+    }
+
+.labelInteira {
+    padding-left: 50px;
+}
+
+    .labelInteira label {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+.colspanDiv {
+    clear: both;
+    position: relative;
+    text-align: center;
+}
+
+a img {
+    border: none;
+}
+
+#ajudaRotina, #configuraImpressora {
+    clear: both;
+    text-align: center;
+    display: none;
+    width: 100%;
+}
+
+#ajudaRotina, #configuraBalanca {
+    clear: both;
+    text-align: center;
+    display: none;
+    width: 100%;
+}
+
+#voltaHint {
+    cursor: pointer;
+}
+
+a, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+#tableGrid, .tableGrid, #tableGridConsulta {
+    font-size: 11px;
+}
+
+#listaImpressoras {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    #listaImpressoras #menu .itemMenuImp {
+        width: 100%;
+        border-bottom-style: solid;
+        border-bottom-color: #3791D3;
+        border-bottom-width: 1px;
+        text-align: center;
+        padding: 10px;
+    }
+
+.text-alert {
+    color: red !important;
+}
+
+.text-warning {
+    color: #fff200 !important;
+}
+
+.linha label {
+    font-weight: bold;
+    position: relative;
+    font-size: 12px;
+}
+
+
+.modalConfirmaAprova {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 15px;
+}
+
+.botaoReprovar {
+    background: red;
+    width: 75px;
+    height: 25px;
+    color: white;
+    border-radius: 5px;
+}
+
+.botaoAprovar {
+    background: green;
+    width: 75px;
+    height: 25px;
+    color: white;
+    border-radius: 5px;
+}
+
+.textoModal {
+    margin: 3px
+}
+
+
+.modalConfirmaMotivo {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 15px;
+}
+
+
+#btnEnviaCCega, #btnVoltarCCega, #btnLimpaCCega, #btnNovoCCega, #btnAdicionaCCega, #btnAdicionarCCega, #btnLimparCCega {
+    width: 33px;
+    height: 33px;
+}
+
+.colspanDivCCega {
+    clear: both;
+    position: relative;
+    text-align: center;
+}
+
+#header {
+    height: 35px;
+    background-color: #3791D3;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+    #header h2 {
+        justify-content: center;
+        text-align: center;
+        margin-right: 20px;
+        font-size: 18px;
+        color: #FFFFFF;
+    }
+
+    #header a img {
+        height: 30px;
+        float: left;
+    }
+
+    #header a {
+        text-decoration: none;
+    }
+
+#footer {
+    bottom: 0;
+    margin: 0;
+    width: 100%
+}
+
+    #footer div {
+        height: auto;
+        background-color: #3791D3;
+        color: white;
+        text-align: center;
+    }
+
+    
+.notification {
+    color: black;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+}
+
+    .notification .badge {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+    }
+
+.notification-icon {
+    margin-right: 6.8775px;
+}
+
+    .notification-icon:after {
+        position: absolute;
+        content: attr(data-count);
+        margin-left: -12.8775px;
+        margin-top: -0.8775px;
+        padding: 0 4px;
+        min-width: 13.755px;
+        height: 13.755px;
+        line-height: 13.755px;
+        background: red;
+        border-radius: 10px;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 11.004px;
+        font-weight: 600;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+.modal-xl-extra {
+    max-width: 90% !important; /* Defina a largura máxima desejada */
+    width: 90% !important; /* Defina a largura desejada */
+}

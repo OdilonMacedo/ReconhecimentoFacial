@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    var sixIdentity = Context.Session.GetString("SixIdentityUrl");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <link href="@Url.Content("~/css/siteColetor.css")" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="~/img/logo.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - TemplateMVCHibrido</title>
+    <script>
+        function getDiretorioUrl() {
+            return '@Url.Content("~")';
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery-1.8.2.min.js"></script>
+    <link href="~/lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/js/json2.js"></script>
+    <script src="~/js/siteColetor.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body id="corpoPrincipal">
+
+    <div id="header">
+        <div id="DivProcessando" style="position:absolute;background-color:white; z-index:2000;width:100%;height:100%;text-align:center;display:none">
+            <div style="color:lawngreen;"><h1><strong>Processando...</strong></h1></div>
+            <img src="~/img/loader.gif" />
+        </div>
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/img/logo-six.jpg" title="Menu Principal" />
+            <h2 class="tituloPageMenu">@ViewBag.Title</h2>
+        </a>
+        <div id="hint" style="float:right; position:absolute; top:0; right:0; padding-right:4px;" onclick="hint()">
+            <img width="30" height="30" src="~/img/ajuda.jpg" title="Ajuda com a Rotina" style="cursor:pointer;" />
+        </div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+        <div class="colspanDiv">
+            <div id="erro">
+                @Html.Raw(ViewBag.erro)
+            </div>
+        </div>
+
+        <div class="colspanDiv">
+            <div id="sucesso">
+                @Html.Raw(ViewBag.sucesso)
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container text-center">
+        <span id="cfgImp" onclick="">
+            |
+            <a href="@string.Concat(sixIdentity, "Impressora/selecaoimpressora")">
+                <img src="~/img/imprimir.jpg" width="35" />
+            </a> |
+            <a href="#"  style="color: #3397DB; ">
+                <i data-count="2" class="fa fa-bell-o fa-2x notification-icon"></i>
+            </a> |
+        </span>
+    </div>
+    <div id="footer">
+        <div>
+            <span>Six Consult @DateTime.Now.Year - Todos os direitos reservados. </span>
+        </div>
+
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

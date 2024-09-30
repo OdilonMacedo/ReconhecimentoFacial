@@ -1,0 +1,14 @@
+﻿@{
+    var errorMessage = TempData["ErrorMessage"] as string;
+    TempData.Remove("ErrorMessage");
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>@errorMessage</strong>
+            <button type="button" class="btn-close text-right" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}

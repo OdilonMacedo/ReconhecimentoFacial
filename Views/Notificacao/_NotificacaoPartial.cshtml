@@ -1,0 +1,71 @@
+﻿@model List<NotificacaoViewModel>?
+@{
+    var corMsg = string.Empty;
+}
+
+<div class="modal fade" id="modalMensagens" tabindex="-1" aria-labelledby="modalMensagensLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl-extra">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalMensagensLabel">Últimos erros ocorridos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Mensagem</th>
+                            <th>Hora</th>
+                            <th>Lida</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaMensagens">
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var linha in Model)
+                            {
+                                 corMsg = linha.MsgLida == true ? "green" : "white";
+
+                                <tr onclick="lerMensagem('@linha.Id')" data-bs-toggle="modal" data-bs-target="#modalDetalhesMensagem">
+                                    <td style="vertical-align: middle;">
+                                        <i class="fa-solid fa-eye fa-lg" style="color: #398FD6;" data-bs-toggle="modal" data-bs-target="#modalDetalhesMensagem" onclick="lerMensagem('@linha.Id')"></i>
+                                    </td>
+                                    <td>@linha.Mensagem</td>
+                                    <td>@linha.Hora</td>
+                                    <td>
+                                        <span class="fa-stack" style="color: black;">
+                                            <i class="fa-regular fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-check fa-stack-1x" id="check_@linha.Id" style="color: @corMsg;"></i>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalDetalhesMensagem" aria-hidden="true" aria-labelledby="modalDetalhesMensagemLabel" tabindex="-1">
+    <div class='modal-dialog modal-xl-extra'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h5 class='modal-title' id='modalDetalhesMensagemLabel'>Detalhes da Mensagem</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class='modal-body' id="detalheMensagemEspecifica">
+            </div>
+            <div class='modal-footer'>
+                <button class="btn btn-primary" data-bs-target="#modalMensagens" data-bs-toggle="modal">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>
